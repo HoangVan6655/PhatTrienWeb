@@ -1,0 +1,78 @@
+﻿@model List<Project.Models.CartItem>
+@await Html.PartialAsync("_CartPartial")
+<h2>GIỎ HÀNG</h2>
+
+@if (Model.Count > 0)
+{
+    decimal total = 0;
+    int stt = 1;
+
+    <table class="table">
+        <tr>
+            <th>STT</th>
+            <th>Sản phẩm</th>
+            <th>Hình ảnh</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th></th>
+        </tr>
+        @foreach (var cartitem in Model)
+        {
+            var thanhtien = cartitem.Quantity * cartitem.product.ProductPrice;
+                <tr>
+                    <td>@(stt++)</td>
+                    <td>@cartitem.product.ProductName</td>
+                    <td><img src="@cartitem.product.ProductImageUrl" width="100" /></td>
+                    @*<td>@cartitem.product.ProductPrice</td>*@
+
+                    <td>@cartitem.product.ProductPrice.GetValueOrDefault(0).ToString("N0")</td>
+                    <td><input asp-for="@cartitem.Quantity" id="@($"quantity-{cartitem.product.ProductId}")" /></td>
+                    <td>@((total += cartitem.product.ProductPrice.GetValueOrDefault(0) * cartitem.Quantity).ToString("N0"))</td>
+                    <td>
+                        <button asp-action="UpdateCart" asp-controller="Cart" class="btn btn-success updatecartitem"
+                                data-productid="@cartitem.product.ProductId">
+                            Cập nhật
+                        </button>
+                        <a asp-action="RemoveCart" asp-controller="Cart" asp-route-productid="@cartitem.product.ProductId"
+                           class="btn btn-danger">Xóa</a>
+                    </td>
+                </tr>
+        }
+        <tr>
+            <td colspan="4" class="text-right">Tổng tiền</td>
+            <td>@(total.ToString("n0"))</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <a asp-controller="Cart" asp-action="Payment" class="btn btn-success">Gửi đơn hàng</a>
+
+    @section Scripts {
+        <script>
+          $(document).ready(function () {
+              $(".updatecartitem").click(function (event) {
+                  event.preventDefault();
+                  var productid = $(this).attr("data-productid");
+                  var quantity = $("#quantity-" + productid).val();
+                  $.ajax({
+                      type: "POST",
+                      url:"@Url.RouteUrl("updatecart")",
+                      data: {
+                          productid: productid,
+                          quantity:quantity
+                      },
+                      success: function (result) {
+                          window.location.href = "@Url.RouteUrl("cart")";
+                      }
+                  });
+              });
+          });
+        </script>
+    }
+
+}
+else
+{
+    <p class="alert alert-danger">Giỏ hàng trống</p>
+}

@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<h2> Dùng href </h2>*@
+@model List<Project.Models.Catergory>
+<ul style="color:red">
+    @foreach (var cat in Model)
+    {
+        <li><a href="/product/listproduct/@cat.CatergoryId"> @cat.CatergoryId - @cat.CatergoryName - @cat.CatergoryDescription </a> </li>
+    }
+</ul>
+
+@*<h2> Dùng asp-controller </h2>
+    @model List<ProjectPhatTrienWeb.Models.Catergory>
+    <ul style="color:red">
+        @foreach (var cat in Model)
+        {
+            <li><a asp-controller="Product" asp-action="ListProduct" asp-route-id="@cat.CatergoryId"> @cat.CatergoryId - @cat.CatergoryName - @cat.CatergoryDescription </a> </li>
+        }
+    </ul>*@
+
+
+
+
+<!--<div class="content-right" >-->
+@*
+    <div class="product-des">
+        @model List<ProjectPhatTrienWeb.Models.Product>
+
+        @for (int i=0;i<Model.Count;i++)
+        {
+
+            <div class="product-info"><img src="@Model[i].ImageUrl" style="width:150px;height:150px;" alt="iphone13" title="product" >
+                <h2>@Model[i].Name</h2>
+                <div class="add"><span> @Model[i].Price đ</span><a href="#">Add To Cart</a></div>
+                <div class="add-to-list ">
+                    <ul>
+                        <li><a href="#">Add To Wish List</a></li>
+                        <li><a href="#">+ Add To Compare</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-info"><img src="@Model[i].ImageUrl" style="width:150px;height:150px;" alt="iphone-g" title="product" />
+
+                     <div class="rotatebg">&nbsp;</div>
+                     <div class="newrotate">New!</div>
+
+                 <h2>@Model[i].Name</h2>
+                 <div class="add"><span>@Model[i].Price đ</span><a href="#">Add To Cart</a></div>
+                 <div class="add-to-list ">
+                     <ul>
+                         <li><a href="#">Add To Wish List</a></li>
+                         <li><a href="#">+ Add To Compare</a></li>
+                     </ul>
+                 </div>
+             </div>
+
+             <div class="product-info last-p"><img src="@Model[i].ImageUrl" style="width:150px;height:150px;" alt="ipod-tuch" title="product" />
+                 <h2>@Model[i].Name</h2>
+                 <div class="add"><span>@Model[i].Price đ</span><a href="#">Add To Cart</a></div>
+                 <div class="add-to-list ">
+                     <ul>
+                         <li><a href="#">Add To Wish List</a></li>
+                         <li><a href="#">+ Add To Compare</a></li>
+                     </ul>
+                 </div>
+             </div>
+         }
+     </div>*@
+
+@*<div class="product-des">
+        <div class="product-info">
+            <img src="~/images/lapy-t.jpg" alt="lapy" title="product" class="lapy" />
+            <h2>lAPTOP DV3</h2>
+            <div class="add"><span>$2.156.00</span><a href="#">Add To Cart</a></div>
+            <div class="add-to-list blank">
+                <ul>
+                    <li><a href="#">Add To Wish List</a></li>
+                    <li><a href="#">+ Add To Compare</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <img src="~/images/g-camera.jpg" alt="g-camera" title="product" class="lapy" />
+            <h2>Galaxy Camera</h2>
+            <div class="add"><span>$2.156.00</span><a href="#">Add To Cart</a></div>
+            <div class="add-to-list ">
+                <ul>
+                    <li><a href="#">Add To Wish List</a></li>
+                    <li><a href="#">+ Add To Compare</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-info last-p">
+            <img src="~/images/dbl-phone.jpg" alt="dbl-ipad" title="product" class="d-phone" />
+
+            <div class="rotatebg">&nbsp;</div>
+            <div class="newrotate">New!</div>
+
+            <h2>Htc Evo 4G</h2>
+            <div class="add"><span>$2.156.00</span><a href="#">Add To Cart</a></div>
+            <div class="add-to-list ">
+                <ul>
+                    <li><a href="#">Add To Wish List</a></li>
+                    <li><a href="#">+ Add To Compare</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>*@
+<!--</div>-->

@@ -1,0 +1,33 @@
+@using Microsoft.AspNetCore.Identity
+@using Project.Areas.Identity.Data
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+    </li>
+    <li class="nav-item">
+        <form id="logoutForm" class="form-inline" asp-action="Logout" asp-controller="User" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
+    <li class="carts"><a asp-action="Cart" asp-controller="Product" class="cart">Shopping Cart</a></li>
+}
+else
+{
+    <li class="border"><a id="login" asp-action="Login" asp-controller="User" class="log"> login </a></li>
+    <li><a id="register" asp-action="Register" asp-controller="User" class="user"> register </a></li>
+    <li class="carts"><a asp-action="Cart" asp-controller="Product" class="cart">Shopping Cart</a></li>
+    @*//macdinh
+    <li class="nav-item">
+        <a class="nav-link text-dark" id="register" asp-action="Register" asp-controller="User">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" id="login" asp-action="Login" asp-controller="User">Login</a>
+    </li>*@
+}
+</ul>

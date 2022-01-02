@@ -1,0 +1,10 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Project.Models.Catergory>
+<ul style="color:red">
+    @foreach (var cat in Model)
+    {
+        <li><a href="/product/listproduct/@cat.CatergoryId"> @cat.CatergoryName </a> </li>
+    }
+</ul>

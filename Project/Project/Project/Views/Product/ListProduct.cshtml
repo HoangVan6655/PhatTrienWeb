@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "Product Page";
+}
+
+@model List<Project.Models.Product>
+<div class="product-des">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        @if (i % 3 == 0)
+        {
+            <div class="product-info" style="margin: 0px 16.6px 10px 0%; ">
+                <img src="@Model[i].ProductImageUrl" style="width:150px;height:150px;" alt="iphone13" title="product">
+
+                <div class="rotatebg">&nbsp;</div>
+                <div class="newrotate">New!</div>
+
+                <h2><a href="/product/productdetails/@Model[i].ProductId">@Model[i].ProductName</a></h2>
+
+                <div class="add">
+                    <span> @Model[i].ProductPrice.GetValueOrDefault(0).ToString("N0") đ
+                    </span><a asp-action="AddToCart" asp-controller="Cart" asp-route-productid="@Model[i].ProductId" role="button">Add To Cart</a>
+                </div>
+
+                <div class="add-to-list " >
+                    <ul>
+                        <li><a href="#">Add To Wish List</a></li>
+                        <li><a href="#">+ Add To Compare</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        else if (i % 3 == 1)
+        {
+            <div class="product-info" style="margin: 0px 16.6px 10px 0; ">
+                @*<a href="/product/productdetails/@Model[i].ProductId">*@
+                <img src="@Model[i].ProductImageUrl" style="width:150px;height:150px;" alt="iphone-g" title="product" />
+
+                <div class="rotatebg">&nbsp;</div>
+                <div class="newrotate">New!</div>
+
+                <h2><a href="/product/productdetails/@Model[i].ProductId">@Model[i].ProductName</a></h2>
+
+                <div class="add">
+                    <span>@Model[i].ProductPrice.GetValueOrDefault(0).ToString("N0") đ</span>
+                    <a asp-action="AddToCart" asp-controller="Cart" asp-route-productid="@Model[i].ProductId" role="button">Add To Cart</a>
+                </div>
+
+                <div class="add-to-list ">
+                    <ul>
+                        <li><a href="#">Add To Wish List</a></li>
+                        <li><a href="#">+ Add To Compare</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="product-info last-p" style="margin: 0px 16.6px 10px 0; ">
+                <img src="@Model[i].ProductImageUrl" style="width:150px;height:150px;" alt="ipod-tuch" title="product" />
+
+                <div class="rotatebg">&nbsp;</div>
+                <div class="newrotate">New!</div>
+
+                <h2><a href="/product/productdetails/@Model[i].ProductId">@Model[i].ProductName</a></h2>
+
+                <div class="add">
+                    <span>@Model[i].ProductPrice.GetValueOrDefault(0).ToString("N0") đ</span>
+                    <a asp-action="AddToCart" asp-controller="Cart" asp-route-productid="@Model[i].ProductId" role="button">Add To Cart</a>
+                </div>
+
+                <div class="add-to-list ">
+                    <ul>
+                        <li><a href="#">Add To Wish List</a></li>
+                        <li><a href="#">+ Add To Compare</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+
+
+    }
+</div>
+
+@*<div class="product-des">
+        @for (int i = 3; i < Model.Count; i++)
+        {
+            @if (i % 3 == 0)
+            {
+                <div class="product-info">
+                    <img src="@Model[i].ProductImageUrl" style="width:150px;height:150px;" alt="lapy" title="product" class="lapy" />
+                    <h2>@Model[i].ProductName</h2>
+                    <div class="add"><span>@Model[i].ProductPrice đ</span><a href="#">Add To Cart</a></div>
+                    <div class="add-to-list blank">
+                        <ul>
+                            <li><a href="#">Add To Wish List</a></li>
+                            <li><a href="#">+ Add To Compare</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }
+            else if (i % 3 == 1 )
+            {
+                <div class="product-info">
+                    <img src="@Model[i].ProductImageUrl" style="width:150px;height:150px;" alt="g-camera" title="product" class="lapy" />
+                    <h2>@Model[i].ProductName</h2>
+                    <div class="add"><span>@Model[i].ProductPrice đ</span><a href="#">Add To Cart</a></div>
+                    <div class="add-to-list ">
+                        <ul>
+                            <li><a href="#">Add To Wish List</a></li>
+                            <li><a href="#">+ Add To Compare</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="product-info last-p">
+                    <img src="@Model[i].ProductImageUrl" style="width:150px;height:150px;" alt="dbl-ipad" title="product" class="d-phone" />
+
+                    <div class="rotatebg">&nbsp;</div>
+                    <div class="newrotate">New!</div>
+
+                    <h2>@Model[i].ProductName</h2>
+                    <div class="add"><span>@Model[i].ProductPrice đ</span><a href="#">Add To Cart</a></div>
+                    <div class="add-to-list ">
+                        <ul>
+                            <li><a href="#">Add To Wish List</a></li>
+                            <li><a href="#">+ Add To Compare</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }
+
+        }
+    </div>*@

@@ -1,0 +1,62 @@
+﻿<Properties StartupConfiguration="{089611B7-13F0-4913-BFB7-49451A442F6F}|Default">
+  <MonoDevelop.Ide.ItemProperties.Project PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Project/Controllers/UserController.cs">
+    <Files>
+      <File FileName="Project/Areas/Identity/Data/IdentityContext.cs" Line="1" Column="1" />
+      <File FileName="Project/ViewComponents/CatergoryListViewComponent.cs" />
+      <File FileName="Project/Views/Shared/Components/CatergoryList/Default.cshtml" />
+      <File FileName="Project/Views/Shared/_MainLayout.cshtml" />
+      <File FileName="Project/Views/Product/ListProduct.cshtml" />
+      <File FileName="Project/Views/Shared/_LayoutProductDetails.cshtml" />
+      <File FileName="Project/Views/Shared/_Layout.cshtml" />
+      <File FileName="Project/Startup.cs" />
+      <File FileName="Project/Controllers/UserController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Project" expanded="True">
+            <Node name="Project" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Areas" expanded="True">
+                <Node name="Identity" expanded="True">
+                  <Node name="Data" expanded="True" />
+                  <Node name="Pages" expanded="True">
+                    <Node name="Account" expanded="True">
+                      <Node name="Login.cshtml" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True">
+                <Node name="UserController.cs" selected="True" />
+              </Node>
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="ViewComponents" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Cart" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Product" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="Components" expanded="True">
+                    <Node name="CatergoryList" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="User" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
